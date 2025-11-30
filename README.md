@@ -8,7 +8,7 @@ It features a responsive customer storefront and a powerful admin backend for st
 ## 🌐 Live Demo
 🔗 **Try PhoneMart Live Here**  
 [*(LINK 1)*](https://phonemart.infy.uk/)
-[*(LINK 2)*](phonemart.free.nf/)
+[*(LINK 2)*](https://phonemart.free.nf/)
 
 ---
 
