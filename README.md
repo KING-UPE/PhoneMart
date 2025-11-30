@@ -107,7 +107,7 @@ Maintain the store structure and presentation:
 
 ## 🛠️ Project Details
 
-- Developed by **KING-UPE**  
+- Developed by **Upendra Dasanayaka**  
 - Full-featured e-commerce system  
 - Includes **SampleDB** folder for quick database setup  
 - Built for real-world use with admin + storefront separation
