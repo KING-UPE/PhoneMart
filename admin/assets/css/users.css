@@ -1,0 +1,1092 @@
+:root {
+  --primary: #4361ee;
+  --primary-dark: #3a56d4;
+  --danger: #ff2c4f;
+  --warning: #f8961e;
+  --success: #4cc9f0;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+  --white: #ffffff;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: var(--dark);
+}
+
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 20px 0;
+}
+
+.sidebar-header {
+  padding: 0 20px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h3 {
+  color: var(--white);
+  font-size: 1.2rem;
+}
+
+.sidebar-menu {
+  padding: 20px 0;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+}
+
+.sidebar-menu li {
+  margin-bottom: 5px;
+}
+
+.sidebar-menu a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: var(--light);
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.sidebar-menu a:hover, .sidebar-menu a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-menu a i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  color: var(--dark);
+}
+
+/* Button Styles */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: var(--white);
+}
+
+.btn-warning {
+  background-color: var(--warning);
+  color: var(--white);
+}
+
+/* Table Styles */
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+th {
+  background-color: var(--light);
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-active {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+}
+
+.status-banned {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+}
+
+.action-btns {
+  display: flex;
+  gap: 8px;
+}
+
+/* Search Box */
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--light-gray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h4 {
+  margin: 0;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  border-top: 1px solid var(--light-gray);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+.delete-user-btn{
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 80px;
+  }
+  
+  .sidebar-header h3, .sidebar-menu a span {
+    display: none;
+  }
+  
+  .sidebar-menu a {
+    justify-content: center;
+  }
+  
+  .sidebar-menu a i {
+    margin-right: 0;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .action-btns {
+    flex-direction: column;
+  }
+  
+  .table-responsive {
+    overflow-x: scroll;
+  }
+}
+
+/* Additional styles for users page */
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-cell .user-info h4 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.user-cell .user-info p {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+/* Modal adjustments */
+.modal-content.large {
+  width: 90%;
+  max-width: 1000px!important;
+}
+
+/* Date filter styling */
+.date-filter {
+  display: flex;
+  gap: 10px;
+}
+
+.date-filter input {
+  padding: 8px 12px;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+}
+@media (max-width: 750px) {
+  
+  /* Adjust table column widths */
+  .user-col {
+    width: 30%;
+  }
+  .joined-col {
+    width: 25%;
+  }
+  .status-col {
+    width: 15%;
+  }
+  .actions-col {
+    width: 20%;
+  }
+  .banned-col {
+    width: 20%;
+  } 
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Hide phone and email columns */
+  .phone-col, .email-col {
+    display: none;
+  }
+        
+  /* Make action buttons vertical */
+  .action-btns {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  /* Adjust table controls layout */
+  .card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .table-controls {
+    margin-top: 0;
+    justify-content: flex-end;
+  }
+  
+  /* Adjust banned users modal */
+  .modal-content.large {
+    width: 95%;
+  }
+  
+  /* Hide phone and email in banned users modal */
+  #bannedUsersModal .phone-col,
+  #bannedUsersModal .email-col {
+    display: none;
+  }
+}
+
+
+:root {
+--primary: #4361ee;
+--primary-dark: #3a56d4;
+--dodger-blue: #3a56d4;
+--secondary: #3f37c9;
+--danger: #ff2c4f;
+--success: #4cc9f0;
+--warning: #f8961e;
+--light: #f8f9fa;
+--dark: #212529;
+--gray: #6c757d;
+--light-gray: #e9ecef;
+--white: #ffffff;
+--border-radius: 8px;
+--box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body {
+background-color: #f5f7fa;
+color: var(--dark);
+}
+
+.admin-container {
+display: flex;
+min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+width: 250px;
+background-color: var(--dodger-blue);
+color: var(--white);
+padding: 20px 0;
+transition: all 0.3s;
+}
+
+.sidebar-header {
+padding: 0 20px 20px;
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h3 {
+color: var(--white);
+font-size: 1.2rem;
+}
+
+.sidebar-menu {
+padding: 20px 0;
+}
+
+.sidebar-menu ul {
+list-style: none;
+}
+
+.sidebar-menu li {
+margin-bottom: 5px;
+}
+
+.sidebar-menu a {
+display: flex;
+align-items: center;
+padding: 12px 20px;
+color: var(--light);
+text-decoration: none;
+transition: all 0.3s;
+}
+
+.sidebar-menu a:hover, .sidebar-menu a.active {
+background-color: rgba(255, 255, 255, 0.1);
+color: var(--white);
+}
+
+.sidebar-menu a i {
+margin-right: 10px;
+font-size: 1.1rem;
+}
+
+/* Main Content Styles */
+.main-content {
+flex: 1;
+padding: 20px;
+}
+
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 30px;
+padding-bottom: 20px;
+border-bottom: 1px solid var(--light-gray);
+}
+
+.header h1 {
+font-size: 1.8rem;
+color: var(--dark);
+}
+
+/* Card Styles */
+
+.card-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+padding-bottom: 10px;
+border-bottom: 1px solid var(--light-gray);
+}
+
+.card-header h2 {
+font-size: 1.3rem;
+color: var(--dark);
+}
+
+/* Form Styles */
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 8px;
+font-weight: 500;
+color: var(--dark);
+}
+
+.form-control {
+width: 100%;
+padding: 10px 15px;
+border: 1px solid var(--light-gray);
+border-radius: var(--border-radius);
+font-size: 1rem;
+transition: border-color 0.3s;
+}
+
+.form-control:focus {
+outline: none;
+border-color: var(--primary);
+}
+
+/* Variant Section */
+
+/* Image Upload */
+
+/* Button Styles */
+.btn {
+padding: 10px 20px;
+border: none;
+border-radius: var(--border-radius);
+font-size: 1rem;
+font-weight: 500;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.btn-danger {
+background-color: var(--danger);
+color: var(--white);
+}
+
+/* Table Styles */
+.table-responsive {
+overflow-x: auto;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+}
+
+th, td {
+padding: 12px 15px;
+text-align: left;
+border-bottom: 1px solid var(--light-gray);
+}
+
+th {
+background-color: var(--light);
+font-weight: 600;
+}
+
+tr:hover {
+background-color: rgba(0, 0, 0, 0.02);
+}
+
+.status-badge {
+padding: 5px 10px;
+border-radius: 20px;
+font-size: 0.8rem;
+font-weight: 500;
+}
+
+.status-active {
+background-color: rgba(40, 167, 69, 0.2);
+color: #28a745;
+}
+
+.action-btns {
+display: flex;
+gap: 5px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+.sidebar {
+max-width: 60px ;
+min-width: 60px ;
+overflow: hidden;
+}
+
+.sidebar-header h3, .sidebar-menu a span {
+display: none;
+}
+
+.sidebar-menu a {
+justify-content: center;
+}
+
+.sidebar-menu a i {
+margin-right: 0;
+font-size: 1.3rem;
+}
+}
+
+@media (max-width: 768px) {
+.sidebar{
+min-width: 60px;
+}
+
+/* .form-group {
+min-width: 300px;
+}
+*/
+}
+
+/* Variant Container Styles */
+
+/* Modal Styles */
+.modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0,0,0,0.5);
+z-index: 1000;
+align-items: center;
+justify-content: center;
+}
+
+.modal-content {
+background-color: white;
+border-radius: var(--border-radius);
+width: 90%;
+max-width: 500px;
+box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+padding: 15px 20px;
+border-bottom: 1px solid var(--light-gray);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.modal-header h4 {
+margin: 0;
+}
+
+.modal-body {
+padding: 20px;
+}
+
+.modal-footer {
+padding: 15px 20px;
+border-top: 1px solid var(--light-gray);
+display: flex;
+justify-content: flex-end;
+gap: 10px;
+}
+
+/* Improved Storage Options */
+
+
+
+
+
+/* Product Management Specific Styles */
+
+:root {
+--primary: #4361ee;
+--primary-dark: #3a56d4;
+--danger: #ff2c4f;
+--warning: #f8961e;
+--success: #4cc9f0;
+--light: #f8f9fa;
+--dark: #212529;
+--gray: #6c757d;
+--light-gray: #e9ecef;
+--white: #ffffff;
+--border-radius: 8px;
+--box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.content-grid {
+display: grid;
+grid-template-columns: 1fr 350px;
+gap: 20px;
+}
+
+.header-actions {
+display: flex;
+align-items: center;
+gap: 15px;
+flex-wrap: wrap;
+}
+
+.table-card {
+background-color: var(--white);
+border-radius: var(--border-radius);
+box-shadow: var(--box-shadow);
+padding: 20px;
+grid-column: 1;
+}
+
+.content-grid {
+grid-template-columns: 1fr;
+}
+
+.table-controls {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+}
+
+.table-controls select {
+padding: 8px 12px;
+border: 1px solid var(--light-gray);
+border-radius: var(--border-radius);
+font-size: 0.9rem;
+background-color: var(--white);
+min-width: 150px;
+}
+
+.table-footer {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 20px;
+padding-top: 15px;
+border-top: 1px solid var(--light-gray);
+flex-wrap: wrap;
+gap: 15px;
+}
+
+.pagination {
+display: flex;
+gap: 5px;
+flex-wrap: wrap;
+}
+
+.pagination .btn {
+min-width: 32px;
+height: 32px;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 0;
+border: 1px solid var(--light-gray);
+background-color: var(--white);
+}
+
+.pagination .btn:hover {
+background-color: var(--light);
+}
+
+.pagination .btn.active {
+background-color: var(--primary);
+color: white;
+border-color: var(--primary);
+}
+
+/* Table Responsive Styles */
+.products-table {
+width: 100%;
+min-width: 800px;
+}
+
+.products-table th {
+position: sticky;
+top: 0;
+background-color: var(--light);
+z-index: 10;
+}
+
+.action-btns {
+display: flex;
+gap: 8px;
+}
+
+@media (max-width: 1200px) {
+.status-badge {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+padding: 5px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+line-height: 1.2;
+font-size: 0.75rem;
+min-height: auto;
+}
+
+/* Adjust status text layout */
+.status-badge span {
+display: block;
+}
+
+/* Visual styles for status types */
+.status-active {
+background-color: rgba(40, 167, 69, 0.2);
+color: #28a745;
+}
+}
+
+/* Responsive Adjustments */
+
+@media (max-width: 768px) {
+.card-header {
+display: block !important;
+}
+
+.table-controls {
+width: 100%;
+}
+
+.table-controls select {
+width: 100%;
+}
+
+.table-footer {
+flex-direction: column;
+align-items: stretch;
+}
+
+.pagination {
+justify-content: center;
+}
+
+.action-btns {
+flex-direction: column;
+gap: 5px;
+}
+
+/* Hide brand and category columns on mobile */
+
+/* Adjust table minimum width */
+.products-table {
+min-width: 600px;
+}
+
+/* Adjust column widths */
+.status-col {
+width: 15%;
+}
+.actions-col {
+width: 15%;
+}
+
+/* Hide brand and category columns for both headers and data cells */
+
+.products-table td:nth-child(2),
+.products-table td:nth-child(3) { /* Category column */
+display: none;
+}
+
+/* Adjust the remaining columns */
+
+.products-table td:first-child {
+width: 40%;
+}
+
+
+.products-table td:nth-child(4),
+.products-table td:nth-child(5),
+.products-table th.status-col,
+.products-table td:nth-child(6) {
+width: 15%;
+}
+
+.products-table th.actions-col,
+.products-table td:last-child {
+width: 15%;
+}
+}
+
+
+/* Mobile-specific circle style */
+
+
+/* For very small mobile devices */
+@media (max-width: 480px) {
+.status-badge {
+width: 70px;
+height: 50px;
+font-size: 0.7rem;
+}
+
+
+}
+
+/* Additional styles for users page */
+
+/* Modal adjustments */
+/* Date filter styling */
+@media (max-width: 750px) {
+
+/* Adjust table column widths */
+.status-col {
+width: 15%;
+}
+.actions-col {
+width: 20%;
+} 
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.date{
+margin-bottom: 10px;
+}
+/* Hide phone and email columns */
+  
+/* Make action buttons vertical */
+.action-btns {
+flex-direction: column;
+gap: 5px;
+}
+
+/* Adjust table controls layout */
+.card-header {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+
+.table-controls {
+margin-top: 0;
+justify-content: flex-end;
+}
+
+/* Adjust banned users modal */
+
+/* Hide phone and email in banned users modal */
+}
+
+/* Offer Modal Styles */
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 8px;
+font-weight: 500;
+}
+
+.form-control {
+width: 100%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 4px;
+}
+
+
+/* Add Variant Button Styles */
+
+.header-actions {
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+/* Variant Modal Styles */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.header-actions {
+flex-direction: column;
+align-items: flex-start;
+}
+}
+
+/* Base styles remain the same */
+
+/* Offer Button Styles */
+
+/* Modal Styles */
+.modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 1000;
+justify-content: center;
+align-items: center;
+}
+
+.modal-content {
+background-color: white;
+border-radius: var(--border-radius);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+width: 100%;
+max-width: 500px;
+animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+from { opacity: 0; transform: translateY(-20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+padding: 15px 20px;
+border-bottom: 1px solid var(--light-gray);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.modal-header h4 {
+margin: 0;
+font-size: 1.25rem;
+}
+
+.modal-body {
+padding: 20px;
+}
+
+.modal-footer {
+padding: 15px 20px;
+border-top: 1px solid var(--light-gray);
+display: flex;
+justify-content: flex-end;
+gap: 10px;
+}
+
+/* Form Styles */
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 8px;
+font-weight: 500;
+}
+
+.form-control {
+width: 100%;
+padding: 10px 15px;
+border: 1px solid var(--light-gray);
+border-radius: var(--border-radius);
+font-size: 1rem;
+transition: all 0.3s ease;
+}
+
+.form-control:focus {
+border-color: var(--primary);
+box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+.modal-content {
+width: 95%;
+margin: 10px;
+}
+
+.header-actions {
+flex-direction: column;
+align-items: flex-start;
+}
+}
+
+.unban-user-btn{
+  background-color: var(--warning);
+  color: var(--white);
+}
+.close-btn-style{
+  background-color: var(--danger);
+  color: var(--white);
+}
+
+
+
+.table-controls input[type="date"] {
+    padding: 8px 10px;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+}
+
